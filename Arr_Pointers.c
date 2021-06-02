@@ -1,4 +1,4 @@
-// Play with Array and Pointers 
+// Array and Pointers Basics
 
 #include <stdio.h>
 
