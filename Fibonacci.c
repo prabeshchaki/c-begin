@@ -19,7 +19,7 @@ int main()
         out = temp_0 + temp_1;
         
         if (i==num-1)
-            printf("%d ", out);
+            printf("The %dth number in Fibonacci Series is %d ", num, out);
 
         temp_0 = temp_1;
         temp_1 = out;
