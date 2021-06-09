@@ -10,7 +10,7 @@ int main()
 {
     int n, r = 0, q = n, count = 0;
 
-    printf("Print any number : \n");
+    printf("Input any number : \n");
     scanf("%d", &n);
     printf("Original Number : %d \n", n);
 
