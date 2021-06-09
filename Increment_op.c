@@ -5,6 +5,9 @@
 int main(){
     
     int a = 5, b;
+    char c = 'e';
+    
+    printf("c ---> %d\n", c );
     
     b = a++;
     printf("a ---> %d\n", a );
