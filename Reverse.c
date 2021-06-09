@@ -14,31 +14,28 @@ int main()
     scanf("%d", &n);
     printf("Original Number : %d \n", n);
 
-    if (n > INT_MAX)
+    // TODO
+    // Handle the scenario if input number is greater than INT_MAX size !!
+    // print message - maxException()
+    // return
+
+    if (n < 10 && n >= 0)
     {
-        maxException();
-        return 1;
+        printf("This is a single digit number.\n");
+        printf("Reversed Number --> %d\n", n);
     }
     else
     {
-        if (n < 10 && n >= 0)
+        while (q >= 10)
         {
-            printf("This is a single digit number.\n");
-            printf("Reversed Number --> %d\n", n);
+            q = ((count == 0) ? abs(n) : ((q - r) / 10));
+            r = q % 10;
+            count++;
         }
-        else
-        {
-            while (q >= 10)
-            {
-                q = ((count == 0) ? abs(n) : ((q - r) / 10));
-                r = q % 10;
-                count++;
-            }
 
-            printf("This is a %d digit Number. \n", count);
+        printf("This is a %d digit Number. \n", count);
 
-            reverse(n, count);
-        }
+        reverse(n, count);
     }
 
     return 0;
