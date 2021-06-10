@@ -22,7 +22,7 @@ int main()
     // print message - maxException()
     // return
 
-    if (n < 10 && n >= 0)
+    if (n < 10 && n >= 0)   
     {
         printf(".. .. This is a single digit number.\n");
         printf(".. .. Reversed Number --> %d\n", n);
