@@ -4,15 +4,18 @@
 
 #define maxException() (printf("Input Number exceeds Max range for Interger type."))
 
-void reverse(int num, int n_digits);
+int reverse(int num, int n_digits);
 
 int main()
 {
-    int n, r = 0, q = n, count = 0;
+    int n, r = 0, q, count = 0, reversedNum;
 
     printf("Input any number : \n");
     scanf("%d", &n);
-    printf("Original Number : %d \n", n);
+    printf(".. Original Number : %d \n", n);
+
+    // Bug Fix
+    q = n;
 
     // TODO
     // Handle the scenario if input number is greater than INT_MAX size !!
@@ -21,28 +24,28 @@ int main()
 
     if (n < 10 && n >= 0)
     {
-        printf("This is a single digit number.\n");
-        printf("Reversed Number --> %d\n", n);
+        printf(".. .. This is a single digit number.\n");
+        printf(".. .. Reversed Number --> %d\n", n);
     }
     else
     {
-        while (q >= 10)
+        
+        while (abs(q) >= 10)
         {
             q = ((count == 0) ? abs(n) : ((q - r) / 10));
             r = q % 10;
             count++;
         }
 
-        printf("This is a %d digit Number. \n", count);
-
-        reverse(n, count);
-
+        printf(".. .. This is a %d digit Number. \n", count);
+        reversedNum = reverse(n, count);
+        printf(".. .. ..  The Reversed Number is : %d", reversedNum);
     }
 
     return 0;
 }
 
-void reverse(int num, int n_digits)
+int reverse(int num, int n_digits)
 {
     int q, r, sum = 0;
 
@@ -52,5 +55,6 @@ void reverse(int num, int n_digits)
         r = q / (int)pow(10, i - 1);
         sum += r * (int)pow(10, j);
     }
-    printf("Reversed Number %d ", (num < 0) ? (-1) * sum : sum);
+
+    return (num < 0) ? (-1) * sum : sum;
 }
